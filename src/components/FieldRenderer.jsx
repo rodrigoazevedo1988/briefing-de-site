@@ -13,7 +13,7 @@ export default function FieldRenderer({ field, value, onChange }) {
       <div className="mt-4">
         {field.type === 'text' && (
           <input type="text" value={value || ''} onChange={e => handleChange(field.id, e.target.value)} placeholder={field.placeholder}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+            className="w-full px-4 py-3 h-12 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
         )}
         {field.type === 'textarea' && (
           <textarea value={value || ''} onChange={e => handleChange(field.id, e.target.value)} placeholder={field.placeholder} rows={4}
