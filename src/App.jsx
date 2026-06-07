@@ -91,7 +91,7 @@ export default function App() {
           </button>
         </div>
 
-        {currentStep === 1 && !formData.preenchidoPor && !formData.data && (
+        {currentStep === 1 && (
           <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-6">
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">Antes de começar, informe quem está preenchendo:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -107,15 +107,6 @@ export default function App() {
                   className="w-full px-4 py-3 h-12 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none" />
               </div>
             </div>
-          </div>
-        )}
-
-        {currentStep === 1 && (formData.preenchidoPor || formData.data) && (
-          <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg mb-6 flex items-center justify-between">
-            <div className="text-sm text-blue-800 dark:text-blue-200">
-              <span className="font-semibold">Preenchido por:</span> {formData.preenchidoPor || '-'} | <span className="font-semibold">Data:</span> {formData.data ? new Date(formData.data).toLocaleDateString('pt-BR') : '-'}
-            </div>
-            <button onClick={() => setFormData(p => ({ ...p, preenchidoPor: '', data: '' }))} className="text-blue-600 dark:text-blue-300 hover:text-blue-800 text-sm">Editar</button>
           </div>
         )}
 
